@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">	
+	
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">	
+	</head>
+		<script th:src="@{../js/mandatoryFieldAutore.js}" type="text/javascript" defer></script>	
+	<title>Aggiorna Autore</title>
+                       	
+	<body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+		<div id="contentForm">
+		<h1>Aggiorna autore</h1>
+		<form method="post" th:object="${autore}" 
+			  th:action="@{'/autori/aggiornaAutore?id=' + ${autore.id}}" id="autoreForm" >
+			<input type="text" name="nome" th:field="*{nome}" value="${autore.nome}" />		
+			<input type="text" name="cognome" th:field="*{cognome}" value="${autore.cognome}" />	
+			<input type="hidden" name="id" th:field="*{id}" />		
+			<button type="submit" id="btnAutore">Aggiorna autore</button>
+		</form>
+		</div>
+	</body>
+	
+</html>

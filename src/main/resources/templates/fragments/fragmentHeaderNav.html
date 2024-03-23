@@ -1,0 +1,16 @@
+<div th:fragment="navbar">
+	<header id="headernav">
+		<div class="barraNavTitolo">
+			<span>Libreria</span>
+		</div>
+		<div id="nav">
+			<ul id="menu">
+				<li><a th:href="@{'/home'}">Home Page</a></li>
+				<li><a th:href="@{'/libri'}">libri</a></li>
+				<li><a th:href="@{'/autori'}">autori</a></li>
+				<li><a th:href="@{'/categorie'}">categorie</a></li>				
+				<li><a th:href="@{'/inserisciDataForm'}" id="openSubmenu">Inserisci dati</a></li>											 		 
+			</ul>
+		</div>
+	</header>	
+</div>

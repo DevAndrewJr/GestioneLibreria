@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:include="fragments/fragmentMetaTags :: headFragment">
+	</head>
+	<title>Lista Categorie</title>
+    <body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+        <div id="content">           
+                <h1>Categorie</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Categoria</th>
+                        <th></th>
+                        <th></th>                       
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="cat : ${categorie}">
+                        <td th:text="${cat.id}"></td>
+                        <td th:text="${cat.nomeCategoria}"></td>
+                        <td><a th:href="@{/categorie/paginaAggiornaCategoria(id=${cat.id})}">Aggiorna</a></td>
+                        <td><a th:href="@{/categorie/cancella(id=${cat.id})}">Cancella</a></td> 
+                    </tr>
+                    </tbody>
+                </table>         
+        </div>
+    </body>
+</html>

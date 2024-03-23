@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">	
+	
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">
+	</head>	
+	<script th:src="@{../js/mandatoryFieldAutore.js}" type="text/javascript" defer></script>
+	<title>Registrazione autore</title>
+
+                       	
+	<body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+		<div id="contentForm">
+		<h1>Inseri autore</h1>
+		<form method="post" th:object="${autore}" th:action="@{'/autori/save'}" id="autoreForm">
+			<input type="text" name="nome" th:field="*{nome}" placeholder="scrivi nome autore" />
+			<input type="text" name="cognome" th:field="*{cognome}" placeholder="scrivi cognome autore" />
+			<button type="submit" id="btnAutore">Inserisci autore</button>
+		</form>
+		</div>
+	</body>
+	
+</html>

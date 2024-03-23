@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">	
+	
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">			
+	</head>
+	<script th:src="@{../js/mandatoryFieldCategoria.js}" type="text/javascript" defer></script>	
+	<title>Registrazione categoria</title>
+                       	
+	<body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+		<div id="contentForm">
+		<h1>Inserisci categoria</h1>
+		<form method="post" th:object="${categoria}" th:action="@{'/categorie/save'}" id="categoriaForm">
+			<input type="text" name="nomeCategoria" th:field="*{nomeCategoria}" placeholder="scrivi categoria">			
+			<button type="submit" id="btnCategoria" value="1">Inserisci categoria</button>
+		</form>
+		</div>
+	</body>
+	
+</html>

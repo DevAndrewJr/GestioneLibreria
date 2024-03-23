@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:include="fragments/fragmentMetaTags :: headFragment">
+	</head>
+	
+	<title>Lista Autori</title>
+	
+	<div th:include="fragments/fragmentSpaceNav :: spaceNav">
+	</div>
+    <body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+        <div id="content">
+            <div class="table-container">
+                <h1>Lista Autori</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="aut : ${autori}">
+                        <td th:text="${aut.id}"></td>
+                        <td th:text="${aut.nome}"></td>
+                        <td th:text="${aut.cognome}"></td>
+                        <td><a th:href="@{/autori/paginaAggiornaAutore(id=${aut.id})}">Aggiorna</a></td>
+                        <td><a th:href="@{/autori/cancella(id=${aut.id})}">Cancella</a></td>                        
+                    </tr>
+                    </tbody>
+                </table>
+                <br><br>
+            </div>
+        </div>      
+    </body>
+    
+    
+</html>

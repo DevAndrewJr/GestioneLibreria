@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">	
+	
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">	
+			<script th:src="@{../js/mandatoryFieldCategoria.js}" type="text/javascript" defer></script>	
+	</head>
+	<title>Aggiorna categoria</title>
+                       	
+	<body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+		<div id="contentForm">
+		<h1>Aggiorna categoria</h1>
+		<form method="post" th:object="${categoria}" 
+			  th:action="@{'/categorie/aggiornaCategoria?id=' + ${categoria.id}}" id="categoriaForm" >
+			<input type="text" name="nomeCategoria" th:field="*{nomeCategoria}" value="${nomeCategoria}">		
+			<input type="hidden" name="id" th:field="*{id}" />		
+			<button type="submit" id="btnCategoria">Aggiorna categoria</button>
+		</form>
+		</div>
+	</body>
+	
+</html>

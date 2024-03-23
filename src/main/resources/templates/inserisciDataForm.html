@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+ 	<head th:replace="fragments/fragmentMetaTags :: headFragment">
+	</head>
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">
+	</head>
+	<title>::: Menu Inserimento Dati :::</title>
+
+    <body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+        <div id="contentForm">           
+			<h1>Inserisci dati</h1>
+			<div id="boxMenuInsert">
+				<ul>				
+					<li><a th:href="@{'/libri/inserisciLibro'}">Inserisci Libro</a></li>
+					<li><a th:href="@{'/autori/inserisciAutore'}">Inserisci Autore</a></li>
+					<li><a th:href="@{'/categorie/paginaInserisciCategoria'}">Inserisci Categoria</a></li>
+				</ul>
+			</div>                    
+        </div>
+    </body>
+</html>

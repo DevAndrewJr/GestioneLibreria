@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+body{
+	background-color:bisque;
+	overflow-y: scroll;
+	margin: 0;	
+}
+
+
+#content{
+	padding: 0;
+	top: 120px;
+	left: 20px;
+	width: 98%;
+	position: relative;	
+}
+
+#contentForm{
+	padding: 0;
+	left: 20px;
+	width: 98%;
+	position: relative;	
+}
+
+#content  h1{
+	margin-left: 3px;
+	color: #353740;
+	font-family: verdana;
+	font-size: 1.7em;
+	letter-spacing: -0.03em;
+}
+
+#contentForm h1{
+	margin-left: 3px;
+	color: #353740;
+	font-family: verdana;
+	font-size: 1.7em;
+	letter-spacing: -0.03em;
+}
+
+#content h6{
+	/* Deve essere applicato solo alla Home Page */
+	margin-top: -10px;
+	margin-left: 3px;
+	color: #857940;
+	font-family: verdana;
+	font-size: 1.4em;
+	letter-spacing: -0.03em;
+}
+
+
+#content table {
+	border: 0;
+	cursor: cell;
+
+}
+
+
+#content table tr:nth-child(even) { 
+	 background: #7F7F7F;
+}
+
+#content table tr:nth-child(odd) { 
+	background: none; 	
+}
+
+
+
+#content table tr th   {
+    background: grey;
+}
+
+#content table thead tr th:first-child{
+	border-top-left-radius: 7px 7px;
+}
+
+#content table thead tr th:last-child{
+	border-top-right-radius: 7px 7px;
+}
+
+#content table th, td {
+  padding: 4px;
+  border: 0;
+}
+
+#content th{
+	font-family: verdana;
+	font-size: 1.2em;
+	color: #222;	
+}
+
+#content td{
+	font-family: verdana;
+	font-size: 0.8em;
+}
+
+#content table tr td#titolo:nth-child(2){
+	width: 300px;
+}
+
+
+#content table tr:nth-child(even) td a{ 
+	color: #e4e4e4; 
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#content table tr:nth-child(odd) td a{ 
+	color: #464140; 
+	text-decoration: none;
+	font-weight: bold; 
+}
+
+#boxMenuInsert{
+	list-style-type: none;
+	box-shadow: 7px 7px 2px #9a9a9a;
+	margin-top: 30px;
+	padding: 7px;
+	width: 15%;
+	height: 120px;
+	background-color: #585858;
+	border-radius: 7px;
+	font-family: verdana;
+	font-size: 0.9em;
+	color: orange;
+}
+
+#boxMenuInsert li{
+	padding: 2px;
+}
+
+#boxMenuInsert a{
+	padding: 1px;
+	text-decoration: none;
+	color: #e4e4e4;
+}
+
+#boxMenuInsert a:hover{
+	color: orange;
+}
+
+
+
+/*
+#content table tr:last-child td:first-child { 
+	border-bottom-left-radius: 7px 7px;
+}
+
+#content table tr:last-child td:last-child { 
+	border-bottom-right-radius: 7px 7px;	
+}
+*/
+

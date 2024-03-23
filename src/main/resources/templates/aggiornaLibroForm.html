@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="fragments/fragmentMetaTags :: headInsertFragment">		
+	</head>
+	<script th:src="@{../js/mandatoryFieldLibro.js}" type="text/javascript" defer></script>
+	<title>Aggiorna Libro</title>
+                       	
+	<body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+		<div th:replace="/fragments/fragmentSubNav :: subnavbar"></div>
+		<div id="contentForm">
+		<h1>Inserisci libro</h1>
+		<form method="POST" th:object="${libro}" 
+			  th:action="@{'/libri/aggiornaLibro?id=' + ${libro.id}}" id="libroForm">		
+			
+			<input type="text" name="titolo" th:field="*{titolo}" value="${libro.titolo}" required/>		
+			<input type="number" step="0.01" name="prezzo" th:field="*{costo}" value="${libro.costo}" required/>
+			<input type="text" name="codiceIsbn" th:field="*{codiceIsbn}" value="${libro.codiceIsbn}" required/>
+			
+			<select id="autore" name="autore">				
+				<option th:each="autore : ${autori}" 
+						th:value="${autore.id}" 
+						th:text="${autore.nome} + ' ' + ${autore.cognome}"
+						th:selected="${autore.id == libro.autore.id}">
+				</option>
+			</select>
+        
+			<select id="categoria" name="categoria">
+				<option th:each="categoria : ${categorie}" 
+						th:value="${categoria.id}" 
+						th:text="${categoria.nomeCategoria}"
+						th:selected="${categoria.id == libro.categoria.id}">
+				</option>
+			</select>
+			
+			<input type="hidden" name="id" th:field="*{id}" />
+			
+			<button id="btnBook" type="submit">Aggiorna libro</button>
+		</form>
+		</div>
+	</body>
+	
+</html>

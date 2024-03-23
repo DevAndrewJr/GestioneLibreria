@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.barraFooter{	
+	
+	width: 100%;
+	height: 10px;
+	background-color: #222;
+	border-top: solid 2px #777;
+	color: bisque;
+	text-align: left;
+	line-height: 50px;
+	position: fixed;
+	padding: 20px;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+

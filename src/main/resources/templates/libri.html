@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="fragments/fragmentMetaTags :: headFragment">
+	</head>
+	<title>Lista Libri</title>
+	
+    <body>
+		<div th:replace="/fragments/fragmentHeaderNav :: navbar"></div>
+        <div id="content">
+            <h1>Elenco libri</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titolo</th>
+                    <th>Prezzo</th>
+                    <th>Codice ISBN</th>
+                    <th>Autore</th>
+                    <th>Categoria</th>
+                    <th></th>
+                    <th></th>                        
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="libro : ${libri}">
+                    <td th:text="${libro.id}"></td>
+                    <td th:text="${libro.titolo}" id="titolo"></td>
+                    <td th:text="${libro.costo}"></td>
+                    <td th:text="${libro.codiceIsbn}"></td>
+                    <td th:text="${libro.autore.nome} + ' ' + ${libro.autore.cognome}"></td>
+                    <td th:text="${libro.categoria.nomeCategoria}"></td>
+                    <td><a th:href="@{/libri/paginaAggiornaLibro(id=${libro.id})}">Aggiorna</a></td>
+                    <td><a th:href="@{/libri/cancella(id=${libro.id})}">Cancella</a></td> 
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
